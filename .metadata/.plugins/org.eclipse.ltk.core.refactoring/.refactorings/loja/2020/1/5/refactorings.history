@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static HttpServer inicializaServidor()&apos; from &apos;br.com.alura.loja.Servidor.main()&apos; to &apos;br.com.alura.loja.Servidor&apos;&#x0A;- Original project: &apos;loja&apos;&#x0A;- Method name: &apos;inicializaServidor&apos;&#x0A;- Destination type: &apos;br.com.alura.loja.Servidor&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;inicializaServidor&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src\/main\/java&lt;br.com.alura.loja{Servidor.java" name="inicializaServidor" replace="false" selection="345 349" stamp="1580373462417" version="1.0" visibility="2"/>
+</session>

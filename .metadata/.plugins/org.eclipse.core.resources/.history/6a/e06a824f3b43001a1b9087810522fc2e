@@ -1,0 +1,59 @@
+package br.com.alura.loja;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.thoughtworks.xstream.XStream;
+
+import br.com.alura.loja.modelo.Carrinho;
+
+public class ClienteTest {
+
+	@Before
+	public void startServidor() {
+		
+	}
+	
+	
+	@Test
+	public void testaQueBuscarUmCarrinhoTrazOCarrinhoEsperado() {
+
+		Client client = ClientBuilder.newClient(); // Criação do cliente http com servidor
+		WebTarget target = client.target("http://localhost:8081"); // Passo a URI base
+		String conteudo = target.path("/carrinhos").request().get(String.class);
+		// Informo que eu quero uma URI específica
+		// Na requisição acima o servidor irá devolver uma resposta, por sua vez,
+		// queremos somente a String que for recebida.
+
+		 //System.out.println(conteudo);
+
+		//Assert.assertTrue(conteudo.contains("<rua>Rua Vergueiro 3185")); // Verificando se o XML recebido contém o
+																			// conteúdo desejado
+		// O motivo do código acima é se saber se a conexão com o servidor funcionou
+		// rodar como junit test
+		 
+		 Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo); // Deserializando o XML para objeto.
+		 Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua());
+
+	}
+
+	@After
+	public void mataServidor() {
+		
+	}
+	
+	/*@Test
+	public void testaQueAConexaoComOServidorFuncionaNoPathDeProjetos() {
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://localhost:8081");
+		String conteudo = target.path("/projetos").request().get(String.class);
+		Assert.assertTrue(conteudo.contains("<nome>Minha loja"));
+
+	}*/
+}
