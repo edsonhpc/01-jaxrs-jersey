@@ -18,8 +18,8 @@ public class CarrinhoResource {
 	@GET 
 	@Produces(MediaType.APPLICATION_XML) // Anotação necessária para que o nosso cliente saiba que o conteúdo recebido é XML
 	public String busca(@PathParam("id") long id) {
-		System.out.println("PathParam = " + id);
-		Carrinho carrinho = new CarrinhoDAO().busca(id); // Busca o id 1 do carrinhoDAO
+		
+		Carrinho carrinho = new CarrinhoDAO().busca(1l); // Busca o id 1 do carrinhoDAO
 		
 		return carrinho.toXML(); // Informo que o retorno para o nosso cliente é XML
 		

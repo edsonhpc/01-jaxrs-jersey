@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.ws.rs.client.Client"/>
 <fullyQualifiedTypeName name="javax.ws.rs.client.ClientBuilder"/>
-<fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="org.glassfish.grizzly.http.server.HttpServer"/>
 <fullyQualifiedTypeName name="org.glassfish.grizzly.Grizzly"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory"/>
 <fullyQualifiedTypeName name="java.net.URI"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.server.ResourceConfig"/>
-<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.dao.ProjetoDAO"/>
+<fullyQualifiedTypeName name="br.com.alura.loja.modelo.Carrinho"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="javax.ws.rs.client.Client"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.xs.XSTerm"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
 </qualifiedTypeNameHistroy>

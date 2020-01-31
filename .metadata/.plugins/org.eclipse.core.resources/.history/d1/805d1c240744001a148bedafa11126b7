@@ -32,7 +32,7 @@ public class ProjetoTest {
 	public void testaQueAConexaoComOServidorFuncionaNoPathDeProjetos() {
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://localhost:8082"); // API local
-		String conteudo = target.path("/projetos/1").request().get(String.class);
+		String conteudo = target.path("/projetos/4").request().get(String.class);
 		
 		Projeto projeto = (Projeto) new XStream().fromXML(conteudo); // Recebe o XML e converte novamente para objeto java
 		

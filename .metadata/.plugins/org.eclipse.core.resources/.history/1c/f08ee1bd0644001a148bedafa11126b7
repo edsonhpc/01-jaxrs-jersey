@@ -26,19 +26,13 @@ public class Servidor {
 		ResourceConfig config = new ResourceConfig().packages("br.com.alura.loja"); // Com o config criamos a configuração para o Grizzly que nossa aplicação é baseada em JAX-RS
 		HttpServer server = GrizzlyHttpServerFactory.createHttpServer(uri, config);
 		
-		exibirStacktraceNoConsole();
-		
-		return server;
-		
-	}
-
-	private static void exibirStacktraceNoConsole() {
 		Logger l = Logger.getLogger("org.glassfish.grizzly.http.server.HttpHandler");
 		l.setLevel(Level.FINE);
 		l.setUseParentHandlers(false);
 		ConsoleHandler ch = new ConsoleHandler();
 		ch.setLevel(Level.ALL);
 		l.addHandler(ch);
+		return server;
 	}  
 
 }

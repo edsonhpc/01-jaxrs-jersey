@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><testrun name="ClienteTest" project="loja" tests="1" started="1" failures="0" errors="2" ignored="0">
-  <testsuite name="br.com.alura.loja.ClienteTest" time="0.671">
-    <testcase name="testaQueBuscarUmCarrinhoTrazOCarrinhoEsperado" classname="br.com.alura.loja.ClienteTest" time="0.672">
+  <testsuite name="br.com.alura.loja.ClienteTest" time="0.532">
+    <testcase name="testaQueBuscarUmCarrinhoTrazOCarrinhoEsperado" classname="br.com.alura.loja.ClienteTest" time="0.532">
       <error>javax.ws.rs.ProcessingException: IOException thrown when trying to start grizzly server
 	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory.createHttpServer(GrizzlyHttpServerFactory.java:276)
 	at org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory.createHttpServer(GrizzlyHttpServerFactory.java:110)
-	at br.com.alura.loja.Servidor.inicializaServidor(Servidor.java:25)
+	at br.com.alura.loja.Servidor.inicializaServidor(Servidor.java:24)
 	at br.com.alura.loja.ClienteTest.startaServidor(ClienteTest.java:23)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -47,7 +47,7 @@ Caused by: java.net.BindException: Endereço já em uso
 	... 27 more
 
 java.lang.NullPointerException
-	at br.com.alura.loja.ClienteTest.mataServidor(ClienteTest.java:51)
+	at br.com.alura.loja.ClienteTest.mataServidor(ClienteTest.java:28)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
