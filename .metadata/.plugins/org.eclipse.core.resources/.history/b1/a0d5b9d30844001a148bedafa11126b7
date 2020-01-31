@@ -77,12 +77,8 @@ public class Carrinho {
 		return produtos;
 	}
 
-	public String toXML() { // Para XML
+	public String toXML() {
 		return new XStream().toXML(this);
-	}
-
-	public String toJSON() { // Para JSON
-		return new Gson().toJson(this);
 	}
 
 }
