@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="java.net.URI"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.server.ResourceConfig"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
-<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.dao.ProjetoDAO"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.modelo.Carrinho"/>
@@ -16,7 +15,12 @@
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="javax.ws.rs.client.Client"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.xs.XSTerm"/>
-<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
 <fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+<fullyQualifiedTypeName name="java.util.logging.Logger"/>
+<fullyQualifiedTypeName name="java.util.logging.Level"/>
+<fullyQualifiedTypeName name="java.util.logging.ConsoleHandler"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
+<fullyQualifiedTypeName name="br.com.alura.loja.dao.CarrinhoDAO"/>
 </qualifiedTypeNameHistroy>
