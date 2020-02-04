@@ -63,11 +63,12 @@ public class ClienteTest {
     	
     	Assert.assertEquals(201, response.getStatus()); // Teste 01: verificando se o status code é igual a 201 created
     	
-    	                                         
-    	String location = response.getHeaderString("Location"); // Teste 02: Recupeso a uri criada conforme POST
-    	String conteudo = client.target(location).request().get(String.class); // Após chamo a requisição passando a localização da uri
-    	Assert.assertTrue(conteudo.contains("Oculos")); // Recuperando o conteudo após a requisição acima eu vejo se o conteudo contém o esperado
-    
+    	String location = response.getHeaderString("Location");
+    	String conteudo = client.target(location).request().get(String.class);
+    	Assert.assertTrue(conteudo.contains("Oculos"));
+    	
+       // Assert.assertEquals("<status>sucesso</status>", response.readEntity(String.class));
+
 	}
 	
 

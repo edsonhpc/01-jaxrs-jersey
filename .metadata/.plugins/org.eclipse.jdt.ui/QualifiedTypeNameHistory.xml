@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="org.glassfish.grizzly.http.server.HttpServer"/>
 <fullyQualifiedTypeName name="org.glassfish.grizzly.Grizzly"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory"/>
-<fullyQualifiedTypeName name="java.net.URI"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.server.ResourceConfig"/>
 <fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
@@ -23,4 +22,7 @@
 <fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.dao.CarrinhoDAO"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+<fullyQualifiedTypeName name="java.net.URI"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
 </qualifiedTypeNameHistroy>

@@ -56,13 +56,15 @@ public class ProjetoTest {
 	  Entity<String> entity = Entity.entity(json, MediaType.APPLICATION_JSON); // Usamos o entity para representar o que será enviado
 
       Response response = target.path("/projetos").request().post(entity); // Faço a chamada passando o json + cabeçalho com mediaType
-      Assert.assertEquals(201, response.getStatus()); // 1º Teste: Checa se o recurso foi criado
       
-      String location = response.getHeaderString("Location");
-      String conteudo = client.target(location).request().get(String.class); 
-      Assert.assertTrue(conteudo.contains("Eisa")); // 2º Teste: Verifica se o conteúdo contém a palavra Eisa  
+      Assert.assertEquals(201, response.getStatus());
+      
       //Assert.assertEquals("<status>sucesso</status>", response.readEntity(String.class)); // Executo o teste para saber se deu certo
-	  	
+	  
+	  
+	  
+		
 	}
 	
+
 }

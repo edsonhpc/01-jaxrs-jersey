@@ -57,17 +57,12 @@ public class ClienteTest {
 		
 		String xml = carrinho.toXML();
 		
-    	Entity<String> entity = Entity.entity(xml, MediaType.APPLICATION_XML); 
-    	
+		// Com o XML pronto precisamos representado, e essa representação usamos o Entity: passando o conteudo, e o mediaType
+    	Entity<String> entity = Entity.entity(xml, MediaType.APPLICATION_XML); // Usamos o entity para representar o que será enviado
+
     	Response response = target.path("/carrinhos").request().post(entity);
-    	
-    	Assert.assertEquals(201, response.getStatus()); // Teste 01: verificando se o status code é igual a 201 created
-    	
-    	                                         
-    	String location = response.getHeaderString("Location"); // Teste 02: Recupeso a uri criada conforme POST
-    	String conteudo = client.target(location).request().get(String.class); // Após chamo a requisição passando a localização da uri
-    	Assert.assertTrue(conteudo.contains("Oculos")); // Recuperando o conteudo após a requisição acima eu vejo se o conteudo contém o esperado
-    
+        Assert.assertEquals("<status>sucesso</status>", response.readEntity(String.class));
+
 	}
 	
 

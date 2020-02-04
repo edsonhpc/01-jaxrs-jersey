@@ -60,9 +60,14 @@ public class ProjetoTest {
       
       String location = response.getHeaderString("Location");
       String conteudo = client.target(location).request().get(String.class); 
-      Assert.assertTrue(conteudo.contains("Eisa")); // 2º Teste: Verifica se o conteúdo contém a palavra Eisa  
+      Assert.assertTrue(conteudo.contains("Eisa")); // 2º Teste: Verifica se o conteúdo contém a palavra Eisa
+      
       //Assert.assertEquals("<status>sucesso</status>", response.readEntity(String.class)); // Executo o teste para saber se deu certo
-	  	
+	  
+	  
+	  
+		
 	}
 	
+
 }
