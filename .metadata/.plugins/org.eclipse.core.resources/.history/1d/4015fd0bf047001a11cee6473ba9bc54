@@ -8,8 +8,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.filter.LoggingFilter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,16 +21,10 @@ import junit.framework.Assert;
 public class ProjetoTest {
 	
 	private HttpServer server; // Criação do atributo que recebe um server
-	private WebTarget target;
-	private Client client;
 
 	@Before // Antes de executar o teste inicializo o servidor
 	public void startServidor() {
 		server = Servidor.inicializaServidor();
-		ClientConfig config = new ClientConfig(); // Crio a configuração de um client
-		config.register(new LoggingFilter()); // Registro a configuração com filtro de Loggin
-		this.client = ClientBuilder.newClient(config); // Crio o Client baseado nessa configuração
-		this.target = client.target("http://localhost:8082"); // API local
 	}
 	
 	@After // Depois do teste executado desligo o servidor
@@ -42,7 +34,8 @@ public class ProjetoTest {
 	
 	@Test
 	public void testaQueAConexaoComOServidorFuncionaNoPathDeProjetos() {
-	
+		Client client = ClientBuilder.newClient();
+		WebTarget target = client.target("http://localhost:8082"); // API local
 		String conteudo = target.path("/projetos/1").request().get(String.class);
 		
 		Projeto projeto = new Gson().fromJson(conteudo, Projeto.class);
@@ -53,7 +46,9 @@ public class ProjetoTest {
 	
 	@Test
 	public void testaQueAdicionaNovosProjetos() {
-	
+	  Client client = ClientBuilder.newClient();
+	  WebTarget target = client.target("http://localhost:8082");
+	  
 	  Projeto projeto = new Projeto(2l, "Planejamento Eisa", 2020); // Crio um projeto novo
 	  
 	  String json = projeto.toJSON(); // Converto o novo objeto para Json
@@ -66,7 +61,8 @@ public class ProjetoTest {
       String location = response.getHeaderString("Location");
       String conteudo = client.target(location).request().get(String.class); 
       Assert.assertTrue(conteudo.contains("Eisa")); // 2º Teste: Verifica se o conteúdo contém a palavra Eisa  
-      	
+      //Assert.assertEquals("<status>sucesso</status>", response.readEntity(String.class)); // Executo o teste para saber se deu certo
+	  	
 	}
 	
 }

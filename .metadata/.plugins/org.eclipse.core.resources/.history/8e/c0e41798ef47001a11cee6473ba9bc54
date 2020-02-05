@@ -64,6 +64,7 @@ public class ClienteTest {
     	Response response = target.path("/carrinhos").request().post(entity);
     	
     	Assert.assertEquals(201, response.getStatus()); // Teste 01: verificando se o status code é igual a 201 created
+    	
     	                                         
     	String location = response.getHeaderString("Location"); // Teste 02: Recupeso a uri criada conforme POST
     	String conteudo = client.target(location).request().get(String.class); // Após chamo a requisição passando a localização da uri
@@ -71,4 +72,5 @@ public class ClienteTest {
     
 	}
 	
+
 }

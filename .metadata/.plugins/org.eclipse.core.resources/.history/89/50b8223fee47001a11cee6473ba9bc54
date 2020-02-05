@@ -8,8 +8,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.jersey.client.ClientConfig;
-import org.glassfish.jersey.filter.LoggingFilter;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,16 +21,10 @@ import br.com.alura.loja.modelo.Produto;
 public class ClienteTest {
 
 	private HttpServer server;
-	private WebTarget target;
-	private Client client;
 
 	@Before
 	public void startaServidor() {
 		server = Servidor.inicializaServidor();
-		ClientConfig config = new ClientConfig(); // Instancio uma configuração de client
-		config.register(new LoggingFilter()); // Com a configuração do client, registro ela com API de Log que é LogginFilter
-		this.client = ClientBuilder.newClient(config);  // Depois crio o ClientBuilder Baseado nesse configuração
-		this.target = client.target("http://localhost:8082"); 
 	}
 	
 	@After
@@ -42,8 +34,11 @@ public class ClienteTest {
 	
 	@Test
 	public void testaQueBuscarUmCarrinhoTrazOCarrinhoEsperado() {
-		
+
+		Client client = ClientBuilder.newClient(); 
+		WebTarget target = client.target("http://localhost:8082"); 
 		String conteudo = target.path("/carrinhos/1").request().get(String.class);
+
 		Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo); 
 		Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua()); 
 		
@@ -51,6 +46,9 @@ public class ClienteTest {
 	
 	@Test
 	public void testaQueSuportaNovosCarrinhos() {
+		
+		Client client = ClientBuilder.newClient(); 
+		WebTarget target = client.target("http://localhost:8082");
 		
 		Carrinho carrinho = new Carrinho(); // Criando o carrinho e transformando em XML para realizar o POST
 		carrinho.adiciona(new Produto(315l, "Oculos de sol", 150, 1));
@@ -64,6 +62,7 @@ public class ClienteTest {
     	Response response = target.path("/carrinhos").request().post(entity);
     	
     	Assert.assertEquals(201, response.getStatus()); // Teste 01: verificando se o status code é igual a 201 created
+    	
     	                                         
     	String location = response.getHeaderString("Location"); // Teste 02: Recupeso a uri criada conforme POST
     	String conteudo = client.target(location).request().get(String.class); // Após chamo a requisição passando a localização da uri
@@ -71,4 +70,5 @@ public class ClienteTest {
     
 	}
 	
+
 }

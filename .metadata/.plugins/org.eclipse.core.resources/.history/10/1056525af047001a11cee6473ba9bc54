@@ -54,7 +54,7 @@ public class ProjetoTest {
 	@Test
 	public void testaQueAdicionaNovosProjetos() {
 	
-	  Projeto projeto = new Projeto(2l, "Planejamento Eisa", 2020); // Crio um projeto novo
+		Projeto projeto = new Projeto(2l, "Planejamento Eisa", 2020); // Crio um projeto novo
 	  
 	  String json = projeto.toJSON(); // Converto o novo objeto para Json
 	
