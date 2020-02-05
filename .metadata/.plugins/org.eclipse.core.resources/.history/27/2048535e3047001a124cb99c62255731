@@ -47,14 +47,17 @@ public class CarrinhoResource {
 		                                    // Os status code é um padrão a ser seguido por toda web
 	}
 	
-	@Path("{id}/produtos/{produtoId}") // Criação do path com a URI que podemos chamar de subrecurso, remover produto do carrinho
+	@Path("{id}/produtos/{produtoId}")
 	@DELETE
-	public Response removerProduto(@PathParam("id") long id , @PathParam("produtoId") long produtoId ) { // Pego valores do path
-
-		Carrinho carrinho = new CarrinhoDAO().busca(id); // Busco primeiro o carrinho
-		carrinho.remove(produtoId); // Removo o produto passando o produtoId parametro recebido no path
+	public Response removerProduto(@PathParam("id") long id , @PathParam("produtoId") long produtoId ) {
+		System.out.println(produtoId);
+		Carrinho carrinho = new CarrinhoDAO().busca(id);
 		
-	return Response.ok().build(); // Devolvo o status 200 OK
+		System.out.println(carrinho);
+		carrinho.remove(produtoId);
+		
+		
+		return Response.ok().build();
 		
 	}
 	

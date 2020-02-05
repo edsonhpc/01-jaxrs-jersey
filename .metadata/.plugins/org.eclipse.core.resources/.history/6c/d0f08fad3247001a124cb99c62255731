@@ -48,8 +48,8 @@ public class ProjetoResource {
 	@Path("{id}")
 	public Response removerProjeto(@PathParam("id") long id) {
 
-	    new ProjetoDAO().remove(id);
-
+		Projeto projeto = new ProjetoDAO().busca(id);
+		projeto.remove(id);
 		
 		return Response.ok().build();
 	}
