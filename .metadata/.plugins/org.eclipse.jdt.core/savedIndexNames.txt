@@ -22,7 +22,6 @@ INDEX VERSION 1.131+/home/edson/workspace/cursos/backend/alura/integracao-aplica
 2460701823.index
 3192982727.index
 1689131213.index
-309287309.index
 1807788132.index
 2630498905.index
 625906076.index
