@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="org.glassfish.grizzly.Grizzly"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.server.ResourceConfig"/>
-<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 <fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.modelo.Carrinho"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -17,18 +16,24 @@
 <fullyQualifiedTypeName name="java.util.logging.Logger"/>
 <fullyQualifiedTypeName name="java.util.logging.Level"/>
 <fullyQualifiedTypeName name="java.util.logging.ConsoleHandler"/>
-<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
 <fullyQualifiedTypeName name="java.net.URI"/>
-<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
 <fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
-<fullyQualifiedTypeName name="br.com.alura.loja.dao.ProjetoDAO"/>
 <fullyQualifiedTypeName name="javax.ws.rs.client.WebTarget"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.client.ClientConfig"/>
 <fullyQualifiedTypeName name="org.glassfish.jersey.filter.LoggingFilter"/>
-<fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
-<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.dao.CarrinhoDAO"/>
 <fullyQualifiedTypeName name="com.thoughtworks.xstream.XStream"/>
 <fullyQualifiedTypeName name="br.com.alura.loja.modelo.Produto"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlAccessorType"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlAccessType"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
+<fullyQualifiedTypeName name="br.com.alura.loja.modelo.Projeto"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Consumes"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Path"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PathParam"/>
+<fullyQualifiedTypeName name="br.com.alura.loja.dao.ProjetoDAO"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
 </qualifiedTypeNameHistroy>

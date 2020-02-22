@@ -30,4 +30,8 @@ public class ProjetoDAO {
         return banco.remove(id);
     }
     
+    public void alterar(Projeto projeto) {
+        banco.put(projeto.getId(), projeto);
+    }
+    
 }

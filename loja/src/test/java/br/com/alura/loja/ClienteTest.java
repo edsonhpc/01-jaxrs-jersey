@@ -42,11 +42,8 @@ public class ClienteTest {
 	
 	@Test
 	public void testaQueBuscarUmCarrinhoTrazOCarrinhoEsperado() {
-		
-		String conteudo = target.path("/carrinhos/1").request().get(String.class);
-		Carrinho carrinho = (Carrinho) new XStream().fromXML(conteudo); 
+		Carrinho carrinho = target.path("/carrinhos/1").request().get(Carrinho.class);
 		Assert.assertEquals("Rua Vergueiro 3185, 8 andar", carrinho.getRua()); 
-		
 	}
 	
 	@Test
@@ -57,17 +54,14 @@ public class ClienteTest {
 		carrinho.setRua("Av. Salgado filho");
 		carrinho.setCidade("Guarulhos");
 		
-		String xml = carrinho.toXML();
-		
-    	Entity<String> entity = Entity.entity(xml, MediaType.APPLICATION_XML); 
-    	
+    	Entity<Carrinho> entity = Entity.entity(carrinho, MediaType.APPLICATION_XML); 
     	Response response = target.path("/carrinhos").request().post(entity);
     	
-    	Assert.assertEquals(201, response.getStatus()); // Teste 01: verificando se o status code é igual a 201 created
-    	                                         
-    	String location = response.getHeaderString("Location"); // Teste 02: Recupeso a uri criada conforme POST
-    	String conteudo = client.target(location).request().get(String.class); // Após chamo a requisição passando a localização da uri
-    	Assert.assertTrue(conteudo.contains("Oculos")); // Recuperando o conteudo após a requisição acima eu vejo se o conteudo contém o esperado
+    	Assert.assertEquals(201, response.getStatus()); // Testando o status de resposta                                     
+    	String location = response.getHeaderString("Location"); 
+    	
+    	Carrinho carrinhoCarregado = client.target(location).request().get(Carrinho.class); // Recuperando os dados do Post 
+    	Assert.assertEquals("Oculos de sol",carrinhoCarregado.getProdutos().get(0).getNome()); 
     
 	}
 	

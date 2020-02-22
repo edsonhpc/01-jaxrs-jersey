@@ -3,6 +3,7 @@ package br.com.alura.loja.modelo;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 
+
 public class Projeto {
 
 	private Long id;

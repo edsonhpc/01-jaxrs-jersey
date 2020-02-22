@@ -11,6 +11,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
 
+
+@XmlRootElement // Obrigatorio uso dessa anotação para utilização da serialização do JAXB
+@XmlAccessorType(XmlAccessType.FIELD) // Usado para informar que todos os campos terá a serialização padrão
 public class Carrinho {
 
 	private List<Produto> produtos = new ArrayList<Produto>();
@@ -18,6 +21,10 @@ public class Carrinho {
 	private String cidade;
 	private long id;
 
+	public Carrinho() {
+		
+	}
+	
 	public Carrinho adiciona(Produto produto) {
 		produtos.add(produto);
 		return this;
